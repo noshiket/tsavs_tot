@@ -47,34 +47,32 @@ python3 tsavs_tot.py -i test.ts -a my_trim.avs
 
 出力例：
 ```
-Parsing AVS file: my_trim.avs
-Found 4 trim ranges
-
 Analyzing video stream...
   Video PID: 0x100
   Total frames: 53657
+Parsing AVS file: my_trim.avs
+  Found 4 trim ranges
+  Service ID: 1072 (0x430)
 
-Analyzing TOT timestamps...
+Segment 1: frames [193, 3188]
+  Start TOT: 2025-12-13 10:00:02.002 JST
+  End TOT:   2025-12-13 10:01:42.068 JST
+  Duration:  100.067 seconds
 
-Trim segment 1: frames [193, 3188]
-  Start TOT: 2025-12-13 19:00:05 JST
-  End TOT:   2025-12-13 19:01:45 JST
-  Duration:  100 seconds
+Segment 2: frames [4988, 22040]
+  Start TOT: 2025-12-13 10:02:41.868 JST
+  End TOT:   2025-12-13 10:12:11.001 JST
+  Duration:  569.132 seconds
 
-Trim segment 2: frames [4988, 22040]
-  Start TOT: 2025-12-13 19:02:45 JST
-  End TOT:   2025-12-13 19:12:15 JST
-  Duration:  570 seconds
+Segment 3: frames [23839, 46345]
+  Start TOT: 2025-12-13 10:13:10.934 JST
+  End TOT:   2025-12-13 10:25:41.868 JST
+  Duration:  750.934 seconds
 
-Trim segment 3: frames [23839, 46345]
-  Start TOT: 2025-12-13 19:13:15 JST
-  End TOT:   2025-12-13 19:25:45 JST
-  Duration:  750 seconds
-
-Trim segment 4: frames [48145, 48743]
-  Start TOT: 2025-12-13 19:26:45 JST
-  End TOT:   2025-12-13 19:27:05 JST
-  Duration:  20 seconds
+Segment 4: frames [48145, 48743]
+  Start TOT: 2025-12-13 10:26:42.002 JST
+  End TOT:   2025-12-13 10:27:02.068 JST
+  Duration:  20.067 seconds
 ```
 
 ### 2. JSON出力
@@ -91,19 +89,26 @@ JSON出力例：
   "segments": [
     {
       "index": 1,
-      "frames": [193, 3188],
-      "start_tot": "2025-12-13 19:00:05",
-      "end_tot": "2025-12-13 19:01:45",
-      "duration_sec": 100
+      "frames": [
+        193,
+        3188
+      ],
+      "start_tot": "2025-12-13 10:00:02.002",
+      "end_tot": "2025-12-13 10:01:42.068",
+      "duration_sec": 100.067
     },
     {
       "index": 2,
-      "frames": [4988, 22040],
-      "start_tot": "2025-12-13 19:02:45",
-      "end_tot": "2025-12-13 19:12:15",
-      "duration_sec": 570
+      "frames": [
+        4988,
+        22040
+      ],
+      "start_tot": "2025-12-13 10:02:41.868",
+      "end_tot": "2025-12-13 10:12:11.001",
+      "duration_sec": 569.132
     }
-  ]
+  ],
+  "sid": 1072
 }
 ```
 
