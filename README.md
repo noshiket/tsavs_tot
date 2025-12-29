@@ -1,6 +1,6 @@
 # tsavs_tot.py
 
-AVSファイルのTrim範囲のTOT（Time Offset Table）時刻を表示するツール。
+AVSファイルのTrim範囲または動画全編のTOT（Time Offset Table）時刻を表示するツール。
 
 ## 概要
 
